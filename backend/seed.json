@@ -1,0 +1,517 @@
+{
+ "stories": [
+  {
+   "id": 1,
+   "title": "The Seventh Tenant",
+   "category": "Haunted Houses",
+   "author": "M. Okafor",
+   "desc": "Every flat in the building has six locks. Hers has seven.",
+   "body": [
+    "The letting agent never mentioned that the flat had been empty for eleven years. She mentioned the view, the radiators, the quiet. Mara signed on the hood of her car, in the rain.",
+    "On the first night she counted the locks. Six on the door, brass, each stiffer than the last. She turned them all.",
+    "On the second night she found a seventh, low on the frame, at the height of a child's hand. It was already turned.",
+    "She laid her palm on the wood. Something on the other side shifted its weight, patiently, the way you do after years of waiting.",
+    "\"Hello?\" she said, and felt ridiculous. The lock clicked. From the inside."
+   ],
+   "minutes": 12,
+   "intensity": 4,
+   "chapters": 5,
+   "cover": "/covers/seventh-tenant.jpg",
+   "status": "published",
+   "created": "2026-11-10",
+   "kind": "story",
+   "triggers": [
+    40,
+    75
+   ]
+  },
+  {
+   "id": 2,
+   "title": "What the Well Remembers",
+   "category": "African Folklore Horror",
+   "author": "T. Adeyemi",
+   "desc": "The village stopped drawing water at night. Nobody would say why.",
+   "body": [
+    "Grandmother never let us near the well after dusk. She said the water kept a ledger.",
+    "My cousin laughed and dropped a coin in. For a moment, from far below, a voice counted it.",
+    "By morning the coin was back on our doorstep, wet, with one more beside it."
+   ],
+   "minutes": 18,
+   "intensity": 5,
+   "chapters": 7,
+   "cover": "/covers/well.jpg",
+   "status": "published",
+   "created": "2026-11-11",
+   "kind": "story",
+   "triggers": [
+    40,
+    75
+   ]
+  },
+  {
+   "id": 3,
+   "title": "Room 9, Third Shift",
+   "category": "Psychological Horror",
+   "author": "Anonymous",
+   "desc": "The night nurse keeps charting a patient discharged in 1994.",
+   "body": [
+    "The chart for Room 9 was blank at midnight. At 3 a.m. it held four lines of handwriting. Hers.",
+    "She had not written them. She checked her signature twice. It matched perfectly.",
+    "The last line read: she is finally looking at the camera."
+   ],
+   "minutes": 9,
+   "intensity": 3,
+   "chapters": 3,
+   "cover": "/covers/room-9.jpg",
+   "status": "published",
+   "created": "2026-11-12",
+   "kind": "story",
+   "triggers": [
+    40,
+    75
+   ]
+  },
+  {
+   "id": 4,
+   "title": "Passenger, Mile 114",
+   "category": "Urban Legends",
+   "author": "R. Vance",
+   "desc": "A hitchhiker who always asks the same question.",
+   "body": [
+    "He stood where the streetlights stopped. He asked, politely, if I knew how long it had been.",
+    "I said it was nearly midnight. He said, no, how long since he had stopped being warm."
+   ],
+   "minutes": 7,
+   "intensity": 3,
+   "chapters": 2,
+   "cover": "/covers/mile-114.jpg",
+   "status": "published",
+   "created": "2026-11-13",
+   "kind": "story",
+   "triggers": [
+    40,
+    75
+   ]
+  },
+  {
+   "id": 5,
+   "title": "The Quiet Stage",
+   "category": "Possession Stories",
+   "author": "L. Haddad",
+   "desc": "The understudy knows every line. She has never rehearsed.",
+   "body": [
+    "The theatre had been dark for a decade when we reopened it. The ghost light was still burning.",
+    "Nobody had left it on. Nobody could find the switch."
+   ],
+   "minutes": 22,
+   "intensity": 5,
+   "chapters": 8,
+   "cover": "/covers/quiet-stage.jpg",
+   "status": "published",
+   "created": "2026-11-14",
+   "kind": "story",
+   "triggers": [
+    40,
+    75
+   ]
+  },
+  {
+   "id": 6,
+   "title": "Forty Days of Static",
+   "category": "Unexplained Disappearances",
+   "author": "J. Brandt",
+   "desc": "A radio operator vanishes. His log does not.",
+   "body": [
+    "The log continued after he left. Same hand. Same dry tone.",
+    "Only the weather reports changed. They began to describe the room he had vanished from."
+   ],
+   "minutes": 14,
+   "intensity": 4,
+   "chapters": 6,
+   "cover": "/covers/static.jpg",
+   "status": "published",
+   "created": "2026-11-15",
+   "kind": "story",
+   "triggers": [
+    40,
+    75
+   ]
+  },
+  {
+   "id": 7,
+   "title": "Lullaby for the Landlord",
+   "category": "Ghost Stories",
+   "author": "S. Moreau",
+   "desc": "A quiet one. The kind that follows you home.",
+   "body": [
+    "The humming started in the walls the week the rent was due.",
+    "It was a lullaby. It was the one my mother sang. I had never told anyone the words."
+   ],
+   "minutes": 6,
+   "intensity": 2,
+   "chapters": 1,
+   "cover": "/covers/lullaby.jpg",
+   "status": "published",
+   "created": "2026-11-16",
+   "kind": "story",
+   "triggers": [
+    40,
+    75
+   ]
+  },
+  {
+   "id": 8,
+   "title": "The Man Who Collected Doors",
+   "category": "Serial Killers",
+   "author": "D. Kessler",
+   "desc": "Detective fiction with a very wrong door.",
+   "body": [
+    "Every victim's front door was missing. Not broken. Removed, carefully, hinges and all.",
+    "The detective found the first one in a warehouse, hung in a frame, slightly open."
+   ],
+   "minutes": 25,
+   "intensity": 5,
+   "chapters": 9,
+   "cover": "",
+   "status": "published",
+   "created": "2026-11-17",
+   "kind": "story",
+   "triggers": [
+    40,
+    75
+   ]
+  }
+ ],
+ "interactive": [
+  {
+   "id": 1,
+   "name": "The Knock",
+   "start": "s",
+   "nodes": {
+    "s": {
+     "text": "2:17 AM. Someone is knocking at your bedroom door.",
+     "options": [
+      {
+       "label": "Open the door",
+       "to": "a"
+      },
+      {
+       "label": "Look through the window",
+       "to": "b"
+      },
+      {
+       "label": "Hide under the bed",
+       "to": "c"
+      },
+      {
+       "label": "Call someone",
+       "to": "d"
+      }
+     ],
+     "ending": false
+    },
+    "a": {
+     "text": "The hallway is empty. The knocking continues, now from inside the room.",
+     "options": [
+      {
+       "label": "Turn around",
+       "to": "e1"
+      },
+      {
+       "label": "Run",
+       "to": "e2"
+      }
+     ],
+     "ending": false
+    },
+    "b": {
+     "text": "Your own face looks back from the glass, knocking.",
+     "options": [
+      {
+       "label": "Knock back",
+       "to": "e1"
+      },
+      {
+       "label": "Draw the curtains",
+       "to": "e2"
+      }
+     ],
+     "ending": false
+    },
+    "c": {
+     "text": "Someone is already under the bed. Move over, it whispers.",
+     "options": [
+      {
+       "label": "Move over",
+       "to": "e1"
+      },
+      {
+       "label": "Scream",
+       "to": "e2"
+      }
+     ],
+     "ending": false
+    },
+    "d": {
+     "text": "Your phone rings first. It is your own number.",
+     "options": [
+      {
+       "label": "Answer",
+       "to": "e1"
+      },
+      {
+       "label": "Hang up",
+       "to": "e2"
+      }
+     ],
+     "ending": false
+    },
+    "e1": {
+     "text": "Ending: The Guest. You live. You are less sure who woke up.",
+     "options": [
+      {
+       "label": "Replay",
+       "to": "s"
+      }
+     ],
+     "ending": true
+    },
+    "e2": {
+     "text": "Ending: Last Light. The house goes quiet. Nobody finds you.",
+     "options": [
+      {
+       "label": "Replay",
+       "to": "s"
+      }
+     ],
+     "ending": true
+    }
+   }
+  },
+  {
+   "id": 2,
+   "name": "The Well",
+   "start": "s",
+   "nodes": {
+    "s": {
+     "text": "Dusk. The well is humming.",
+     "options": [
+      {
+       "label": "Lean over",
+       "to": "a"
+      },
+      {
+       "label": "Walk away",
+       "to": "b"
+      }
+     ],
+     "ending": false
+    },
+    "a": {
+     "text": "Something below counts your heartbeats.",
+     "options": [
+      {
+       "label": "Count with it",
+       "to": "e1"
+      },
+      {
+       "label": "Cover your ears",
+       "to": "e2"
+      }
+     ],
+     "ending": false
+    },
+    "b": {
+     "text": "Behind you, your footsteps continue after you stop.",
+     "options": [
+      {
+       "label": "Look back",
+       "to": "e1"
+      },
+      {
+       "label": "Keep walking",
+       "to": "e2"
+      }
+     ],
+     "ending": false
+    },
+    "e1": {
+     "text": "Ending: Paid in full.",
+     "options": [
+      {
+       "label": "Replay",
+       "to": "s"
+      }
+     ],
+     "ending": true
+    },
+    "e2": {
+     "text": "Ending: The Ledger Closes. You are remembered, which is worse.",
+     "options": [
+      {
+       "label": "Replay",
+       "to": "s"
+      }
+     ],
+     "ending": true
+    }
+   }
+  },
+  {
+   "id": 3,
+   "name": "Night Shift",
+   "start": "s",
+   "nodes": {
+    "s": {
+     "text": "The lift stops on a floor that does not exist.",
+     "options": [
+      {
+       "label": "Step out",
+       "to": "a"
+      },
+      {
+       "label": "Press Close",
+       "to": "b"
+      }
+     ],
+     "ending": false
+    },
+    "a": {
+     "text": "The corridor is lit by one flickering bulb. A door is open.",
+     "options": [
+      {
+       "label": "Go in",
+       "to": "e1"
+      },
+      {
+       "label": "Go back",
+       "to": "b"
+      }
+     ],
+     "ending": false
+    },
+    "b": {
+     "text": "The doors will not close. A hand rests on the frame.",
+     "options": [
+      {
+       "label": "Take the hand",
+       "to": "e1"
+      },
+      {
+       "label": "Use the stairs",
+       "to": "e2"
+      }
+     ],
+     "ending": false
+    },
+    "e1": {
+     "text": "Ending: Floor Thirteen. You work here now.",
+     "options": [
+      {
+       "label": "Replay",
+       "to": "s"
+      }
+     ],
+     "ending": true
+    },
+    "e2": {
+     "text": "Ending: Fire Exit. You escape. The stairs lead back to the same floor.",
+     "options": [
+      {
+       "label": "Replay",
+       "to": "s"
+      }
+     ],
+     "ending": true
+    }
+   }
+  }
+ ],
+ "mysteries": [
+  {
+   "id": 1,
+   "title": "The Lighthouse Keeper Who Kept Logging",
+   "body": "Forty days after the tower was abandoned, the logbook kept filling in the same handwriting.",
+   "clues": "A salt-stained pen. A second set of footprints. A tide table for a year that has not happened.",
+   "theories": [],
+   "reveal": "The keeper's twin had been writing ahead, predicting the tides he planned to drown in.",
+   "date": "",
+   "day": 0
+  },
+  {
+   "id": 2,
+   "title": "The Choir at Pier Nine",
+   "body": "Dock workers heard singing from a sealed warehouse every night at 3:03.",
+   "clues": "Seven coats hung on one hook. Candle wax in a building with no power.",
+   "theories": [],
+   "reveal": "The warehouse had been a chapel; the sealed door was the old confessional.",
+   "date": "",
+   "day": 1
+  },
+  {
+   "id": 3,
+   "title": "Eleven Floors, Twelve Buttons",
+   "body": "A lift panel gained a twelfth button in a building with eleven floors.",
+   "clues": "The button is unlit. Cleaners say the lift is always warm when it arrives empty.",
+   "theories": [],
+   "reveal": "The extra floor is a maintenance void bricked up after a fire in 1971.",
+   "date": "",
+   "day": 2
+  },
+  {
+   "id": 4,
+   "title": "The Postcards from Next Tuesday",
+   "body": "A woman receives postcards dated a week ahead.",
+   "clues": "Every card shows her front door. The handwriting is hers.",
+   "theories": [],
+   "reveal": "She writes them in her sleep and posts them from a mailbox she cannot remember visiting.",
+   "date": "",
+   "day": 3
+  },
+  {
+   "id": 5,
+   "title": "The Empty Seat at Table Four",
+   "body": "A restaurant holds a table for a reservation made in 1983.",
+   "clues": "The booking book. A single place setting. A candle that lights itself.",
+   "theories": [],
+   "reveal": "The reservation was for a wedding that never happened. The groom still comes.",
+   "date": "",
+   "day": 4
+  }
+ ],
+ "archive": [
+  {
+   "id": 1,
+   "code": "CASE 0417",
+   "location": "Mill Road, [REDACTED]",
+   "date": "1987-11-14",
+   "level": "3",
+   "evidence": "Six photographs. The same field, the same lights, a different number each time.",
+   "witness": "They did not move. They waited until we looked away.",
+   "notes": "Compass failure within 200 m. Two investigators unavailable for comment.",
+   "status": "Open, unresolved"
+  },
+  {
+   "id": 2,
+   "code": "CASE 0522",
+   "location": "St. Aldric's Infirmary",
+   "date": "1994-02-03",
+   "level": "4",
+   "evidence": "A discharge sheet signed by a patient who died in 1961.",
+   "witness": "The ward was cold. Every bed was made except one.",
+   "notes": "Records sealed by order of the trustees.",
+   "status": "Sealed"
+  },
+  {
+   "id": 3,
+   "code": "CASE 0609",
+   "location": "Route 9, Northern Province",
+   "date": "2001-08-21",
+   "level": "2",
+   "evidence": "Dashcam footage: a pedestrian who appears in every frame, never closer.",
+   "witness": "He kept pace with the truck at 80 km/h.",
+   "notes": "Footage degraded after third viewing.",
+   "status": "Under review"
+  }
+ ]
+}

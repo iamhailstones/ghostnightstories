@@ -1,0 +1,31 @@
+node_modules
+dist
+.env
+backend/data.json
+backend/ghostnight
+
+# Private environment files
+.env
+**/.env
+
+# Python generated files and environments
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Build output
+dist/
+
+# Private environment files
+.env
+**/.env
+
+# Python generated files and environments
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# Build output
+dist/
