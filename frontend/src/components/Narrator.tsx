@@ -1,8 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
 
-const TTS_URL = 'http://127.0.0.1:8765/tts'
+type Props = {
+  paras: string[]
+  storyId: number
+  chapterIndex: number
+}
 
-export default function Narrator({ paras }: { paras: string[] }) {
+export default function Narrator({ paras, storyId, chapterIndex }: Props) {
   const [i, setI] = useState(0)
   const [playing, setPlaying] = useState(false)
   const [loading, setLoading] = useState(false)
@@ -15,18 +19,21 @@ export default function Narrator({ paras }: { paras: string[] }) {
   const live = useRef(false)
   const requestId = useRef(0)
   const indexRef = useRef(0)
-  const cache = useRef(new Map<number, Blob>())
+  const cache = useRef(new Map<number, string>())
   const audio = useRef<HTMLAudioElement | null>(null)
-  const objectUrl = useRef<string | null>(null)
 
   const ctx = useRef<AudioContext | null>(null)
   const noise = useRef<AudioBufferSourceNode | null>(null)
   const knocks = useRef<number | null>(null)
 
-  const chapterKey = paras.join('\u0000')
+  const chapterKey = `${storyId}:${chapterIndex}:${paras.join('\u0000')}`
 
   function playCached(idx: number) {
     if (!live.current) return
+
+    while (idx < paras.length && !paras[idx]?.trim()) {
+      idx++
+    }
 
     if (idx >= paras.length) {
       live.current = false
@@ -36,21 +43,14 @@ export default function Narrator({ paras }: { paras: string[] }) {
       return
     }
 
-    const blob = cache.current.get(idx)
+    const url = cache.current.get(idx)
 
-    if (!blob) {
+    if (!url) {
       live.current = false
       setPlaying(false)
       setError(`Audio for paragraph ${idx + 1} is not ready.`)
       return
     }
-
-    if (objectUrl.current) {
-      URL.revokeObjectURL(objectUrl.current)
-    }
-
-    const url = URL.createObjectURL(blob)
-    objectUrl.current = url
 
     const player = audio.current ?? new Audio()
     audio.current = player
@@ -64,15 +64,13 @@ export default function Narrator({ paras }: { paras: string[] }) {
     setI(idx)
 
     player.onended = () => {
-      if (live.current) {
-        playCached(idx + 1)
-      }
+      if (live.current) playCached(idx + 1)
     }
 
     player.onerror = () => {
       live.current = false
       setPlaying(false)
-      setError('Could not play the generated narration.')
+      setError(`Could not load paragraph ${idx + 1}. Check that its audio file exists.`)
     }
 
     void player.play().catch(err => {
@@ -91,53 +89,31 @@ export default function Narrator({ paras }: { paras: string[] }) {
     setError('')
 
     try {
+      cache.current.clear()
+
       for (let n = 0; n < total; n++) {
         if (id !== requestId.current) return
 
-        if (cache.current.has(n)) continue
+        if (!paras[n]?.trim()) continue
 
-        const text = paras[n]?.trim()
-        if (!text) continue
+        const url =
+          `/audio/story-${storyId}/chapter-${chapterIndex + 1}/paragraph-${n + 1}.mp3`
 
+        cache.current.set(n, url)
         setProgress(`Preparing ${n + 1}/${total}`)
-
-        const response = await fetch(TTS_URL, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({ text })
-        })
-
-        if (!response.ok) {
-          const message = await response.text()
-          throw new Error(message || `TTS error: ${response.status}`)
-        }
-
-        const blob = await response.blob()
-
-        if (id !== requestId.current) return
-
-        cache.current.set(n, blob)
       }
 
       if (id !== requestId.current) return
 
       setProgress('Ready')
 
-      if (live.current) {
-        playCached(indexRef.current)
-      }
+      if (live.current) playCached(indexRef.current)
     } catch (err) {
       if (id !== requestId.current) return
 
       live.current = false
       setPlaying(false)
-      setError(
-        err instanceof Error
-          ? err.message
-          : 'Could not generate the narration.'
-      )
+      setError(err instanceof Error ? err.message : 'Could not prepare narration.')
       console.error('Narration error:', err)
     } finally {
       if (id === requestId.current) {
@@ -161,7 +137,9 @@ export default function Narrator({ paras }: { paras: string[] }) {
 
     if (loading) return
 
-    if (cache.current.size === paras.filter(p => p.trim()).length) {
+    const total = paras.filter(p => p.trim()).length
+
+    if (cache.current.size === total && total > 0) {
       playCached(indexRef.current)
     } else {
       void prepareAll()
@@ -169,7 +147,7 @@ export default function Narrator({ paras }: { paras: string[] }) {
   }
 
   const skip = (direction: number) => {
-    const next = Math.min(
+    let next = Math.min(
       paras.length - 1,
       Math.max(0, indexRef.current + direction)
     )
@@ -179,16 +157,13 @@ export default function Narrator({ paras }: { paras: string[] }) {
     indexRef.current = next
     setI(next)
 
-    if (playing && !loading) {
-      playCached(next)
-    }
+    if (playing && !loading) playCached(next)
   }
 
   useEffect(() => {
     requestId.current++
     live.current = false
     audio.current?.pause()
-
     cache.current.clear()
     indexRef.current = 0
 
@@ -216,14 +191,8 @@ export default function Narrator({ paras }: { paras: string[] }) {
     return () => {
       live.current = false
       requestId.current++
-
       audio.current?.pause()
       audio.current = null
-
-      if (objectUrl.current) {
-        URL.revokeObjectURL(objectUrl.current)
-      }
-
       noise.current?.stop()
 
       if (knocks.current !== null) {
@@ -249,9 +218,7 @@ export default function Narrator({ paras }: { paras: string[] }) {
 
     const ac = (ctx.current ??= new AudioContext())
 
-    if (ac.state === 'suspended') {
-      void ac.resume()
-    }
+    if (ac.state === 'suspended') void ac.resume()
 
     const buf = ac.createBuffer(1, ac.sampleRate * 2, ac.sampleRate)
     const data = buf.getChannelData(0)
@@ -306,11 +273,7 @@ export default function Narrator({ paras }: { paras: string[] }) {
       </button>
 
       <button className="ghost on" onClick={toggle}>
-        {loading
-          ? progress || 'Preparing...'
-          : playing
-            ? 'Pause'
-            : 'Listen'}
+        {loading ? progress || 'Preparing...' : playing ? 'Pause' : 'Listen'}
       </button>
 
       <button
@@ -323,11 +286,7 @@ export default function Narrator({ paras }: { paras: string[] }) {
       </button>
 
       <div className="bar">
-        <i
-          style={{
-            width: `${(i / Math.max(1, paras.length)) * 100}%`
-          }}
-        />
+        <i style={{ width: `${(i / Math.max(1, paras.length)) * 100}%` }} />
       </div>
 
       <select

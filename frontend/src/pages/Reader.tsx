@@ -235,7 +235,7 @@ export default function Reader() {
         Report this story
       </button>
 
-      <Narrator paras={currentBody} />
+      <Narrator storyId={s.id} chapterIndex={chapterIndex} paras={currentBody} />
 
       <h2 className="s">Related</h2>
 
